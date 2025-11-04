@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Button from "../ui/Button";
-import ScrollZoomImage from "@/components/ui/ScrollZoomImage";
+import ScrollZoomImage from "@/components/animations/ScrollZoomImage";
 
 export default function Eighth() {
   return (

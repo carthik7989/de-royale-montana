@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import InfiniteHorizontalScroll from "@/components/ui/InfiniteHorizontalScroll";
+import InfiniteHorizontalScroll from "@/components/animations/InfiniteHorizontalScroll";
 
 export default function Second() {
   // Card component for reusability

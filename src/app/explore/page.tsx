@@ -1,4 +1,4 @@
-import BreadCrumbs from "@/components/explore/breadcrumbs";
+import BreadCrumbs from "@/components/ui/BreadCrumbs";
 import Second from "@/components/explore/second";
 import Third from "@/components/explore/third";
 import Footer from "@/components/Footer";
@@ -11,7 +11,7 @@ export default function Explore()
         <div className="min-h-screen flex flex-col">
       <Header />
       <main className="">
-      <BreadCrumbs/>
+      <BreadCrumbs title="Nearby Attractions" backgroundImage="/images/fine-dining.png" />
       <Second/>
       <Third/>
       <Eighth/>

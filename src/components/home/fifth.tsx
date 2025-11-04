@@ -1,7 +1,7 @@
 "use client";
 
 import Button from "../ui/Button";
-import InfiniteHorizontalScroll from "@/components/ui/InfiniteHorizontalScroll";
+import InfiniteHorizontalScroll from "@/components/animations/InfiniteHorizontalScroll";
 
 export default function Fifth() {
   // Card component for temple/place cards

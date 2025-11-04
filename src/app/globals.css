@@ -143,6 +143,10 @@
   padding-left: clamp(1.25rem, -0.1003rem + 5.0836vw, 6rem);
   padding-right: clamp(1.25rem, -0.1003rem + 5.0836vw, 6rem);
 }
+@utility fbp{
+  padding-top:clamp(8rem, 6.4rem + 8vw, 16rem);
+  padding-bottom: clamp(4rem, 3.2rem + 4vw, 8rem);
+}
 @utility nav
 {
   @apply text-sm 2xl:text-base 3xl:text-xl

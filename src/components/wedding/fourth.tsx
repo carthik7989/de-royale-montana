@@ -3,13 +3,13 @@ export default function Fourth(){
     return(
         <div className="flex flex-col items-center gap-9 fp">
         {/* Row 1 */}
-        <div className="flex flex-col items-center gap-4 font-mona">
+        <div className="w-full flex flex-col  items-center gap-4 font-mona">
             <Image src="/images/floral-design.svg" alt="Floral Design" width={181.26} height={54.72} />
             <h5 className="text-accent font-light">Crafting Your Dream Wedding</h5>
               {/* Divider */}
-      <div className="flex flex-col gap-y-3">
-      <span className="w-[800px] h-px bg-accent block"></span>
-      <span className="w-[800px] h-1 bg-accent block"></span>
+      <div className="w-full flex flex-col items-center gap-y-3">
+      <span className="w-full lg:w-[800px] h-px bg-accent block"></span>
+      <span className="w-full lg:w-[800px] h-1 bg-accent block"></span>
       </div>
       {/* End of Divider */}
         </div>

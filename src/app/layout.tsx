@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import SmoothScroll from "@/components/layout/SmoothScroll";
+import SmoothScroll from "@/components/animations/SmoothScroll";
 
 export const metadata: Metadata = {
   title: "De Royale Montana - Luxury Hotel Experience",

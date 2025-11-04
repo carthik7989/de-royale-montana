@@ -6,7 +6,7 @@ export default function Second(){
             {/* Row 1 */}
             <div className="flex flex-col items-center gap-4 font-mona">
                 <Image src="/images/floral-design.svg" alt="Floral Design" width={181.26} height={54.72} />
-                <h5 className="text-accent font-light">Begin your forever where the hills echo with joy, and every moment feels like a dream.</h5>
+                <h4 className="text-accent font-light text-center">Begin your forever where the hills echo with joy, and every moment feels like a dream.</h4>
                   {/* Divider */}
           <div className="flex flex-col gap-y-3">
           <span className="w-[400px] h-px bg-accent block"></span>

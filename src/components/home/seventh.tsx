@@ -1,4 +1,4 @@
-import ScrollZoomImage from "@/components/ui/ScrollZoomImage";
+import ScrollZoomImage from "@/components/animations/ScrollZoomImage";
 
 export default function Seventh() {
   return (
