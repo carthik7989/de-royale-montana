@@ -2,14 +2,14 @@ import Button from "../ui/Button";
 
 export default function Fifth() {
   return (
-    <div className="flex flex-col  w-full  gap-y-16 gap-x-27 items-center px-16 py-16 bg-primary">
+    <div className="flex flex-col  w-full  gap-y-16 gap-x-27 items-center fp bg-primary">
       <div className="flex w-full h-full justify-between items-center">
 
         <div className="flex flex-col gap-y-6">
-            <div className="text-4xl font-mona font-light text-accent">What Makes Your Stay</div>
-            <div className="text-6xl font-beautique font-medium text-secondary">Extraordinary</div>
+            <h4 className="f-h4 font-mona font-light text-accent">What Makes Your Stay</h4>
+            <h3 className="f-h3 font-beautique font-medium text-secondary">Extraordinary</h3>
         </div>
-        <Button 
+        {/* <Button 
           buttonBgColor="bg-none"
            borderColor="border-secondary"
             text="View All"
@@ -17,6 +17,19 @@ export default function Fifth() {
             textColor="text-primary"
             showIcon={true}
             iconColor="text-secondary"
+            className="hidden md:block"
+           
+          /> */}
+
+<Button 
+          buttonBgColor="bg-primary"
+           borderColor="border-secondary"
+            text="View All"
+            bgColor="bg-secondary"
+            textColor="text-primary"
+            showIcon={true}
+            iconColor="text-secondary"
+            className='self-start hidden md:flex'
            
           />
       </div>
@@ -31,9 +44,9 @@ export default function Fifth() {
 
                      {/* Content */}
                      <div className="relative w-full h-full flex items-end justify-start ">
-                                                                                                                                                                                               <div className="text-secondary text-4xl leading-relaxed font-mona font-light pl-8 border-l-8 border-accent absolute bottom-0 left-15 origin-bottom-left transform -rotate-90 whitespace-nowrap">
+                                                                                                                                                                                               <h4 className="f-h4 text-secondary leading-relaxed font-mona font-light pl-8 border-l-8 border-accent absolute bottom-0 left-15 origin-bottom-left transform -rotate-90 whitespace-nowrap">
                             Bachanayaka Temple
-                          </div>
+                          </h4>
                      </div>
         </div>
         {/* End of First Card */}
@@ -45,9 +58,9 @@ export default function Fifth() {
 
                      {/* Content */}
                      <div className="relative w-full h-full flex items-end justify-start ">
-                                                                                                                                                                                               <div className="text-secondary text-4xl leading-relaxed font-mona font-light pl-8 border-l-8 border-accent absolute bottom-0 left-15 origin-bottom-left transform -rotate-90 whitespace-nowrap">
+                                                                                                                                                                                               <h4 className=" f-h4 text-secondary leading-relaxed font-mona font-light pl-8 border-l-8 border-accent absolute bottom-0 left-15 origin-bottom-left transform -rotate-90 whitespace-nowrap">
                                                                                    Kukke Subramanya Temple 
-                          </div>
+                          </h4>
                      </div>
         </div>
         {/* End of First Card */}
@@ -59,9 +72,9 @@ export default function Fifth() {
 
                      {/* Content */}
                      <div className="relative w-full h-full flex items-end justify-start ">
-                                                                                                                                                                                               <div className="text-secondary text-4xl leading-relaxed font-mona font-light pl-8 border-l-8 border-accent absolute bottom-0 left-15 origin-bottom-left transform -rotate-90 whitespace-nowrap">
+                                                                                                                                                                                               <h4 className="f-h4 text-secondary leading-relaxed font-mona font-light pl-8 border-l-8 border-accent absolute bottom-0 left-15 origin-bottom-left transform -rotate-90 whitespace-nowrap">
                                                                                                                                                                                                Patla Betta
-                          </div>
+                          </h4>
                      </div>
         </div>
         {/* End of First Card */}

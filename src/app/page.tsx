@@ -1,3 +1,5 @@
+"use client";
+
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Hero from '@/components/home/hero';
@@ -9,10 +11,13 @@ import Sixth from '@/components/home/sixth';
 import Seventh from '@/components/home/seventh';
 import Eighth from '@/components/home/eighth';
 
+
 export default function Home() {
+  
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+     
+     <Header />
       <main className="">
        <Hero />
        <Second/>
@@ -24,6 +29,7 @@ export default function Home() {
        <Eighth/>
       </main>
       <Footer />
-    </div>
+     </div>
+   
   );
 }
