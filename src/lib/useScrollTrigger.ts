@@ -50,12 +50,13 @@ export function useScrollTrigger(options: ScrollTriggerOptions) {
 
     const scrollTrigger = ScrollTrigger.create(config);
 
-    if (options.animation) {
-      options.animation.scrollTrigger = scrollTrigger;
-    }
-
+    // If animation is provided, it should already have scrollTrigger configured
+    // We just return the cleanup function
     return () => {
       scrollTrigger.kill();
+      if (options.animation) {
+        options.animation.kill();
+      }
     };
   }, [options]);
 
