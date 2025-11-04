@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Button from "../ui/Button";
+import ScrollZoomImage from "@/components/ui/ScrollZoomImage";
 
 export default function Eighth() {
   return (
@@ -15,7 +16,12 @@ export default function Eighth() {
         {/* Column 2 */}
         <div className="w-full lg:w-1/3 3xl:w-[40%] flex flex-col items-center gap-y-6">
         <Image src="/images/floral-design.svg" width={243.97} height={69.1} alt="floral-design" className="w-[162px] md:w-[181px] 3xl:w-[243.97]" />
-        <div className="w-full h-[387px] md:h-[513px] 2xl:h-[650px] 3xl:h-[782px] bg-[url('/images/fine-dining.png')] bg-cover bg-center"></div>
+        <ScrollZoomImage
+          zoomScale={1.3}
+          className="w-full h-[387px] md:h-[513px] 2xl:h-[650px] 3xl:h-[782px]"
+        >
+          <div className="w-full h-full bg-[url('/images/fine-dining.png')] bg-cover bg-center"></div>
+        </ScrollZoomImage>
         </div>
         {/* End of Column 2 */}
 
