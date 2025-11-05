@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import BreadCrumbs from "@/components/ui/BreadCrumbs";
+import Fifth from "@/components/wedding/fifth";
 import Fourth from "@/components/wedding/fourth";
 import Second from "@/components/wedding/second";
 import Third from "@/components/wedding/third";
@@ -14,6 +15,7 @@ export default function Wedding() {
       <Second/>
       <Third/>
       <Fourth/>
+      <Fifth/>
       </main>
       <Footer />
     </div>

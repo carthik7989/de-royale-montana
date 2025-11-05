@@ -60,8 +60,9 @@ function WeddingSpaceCard({ space }: WeddingSpaceCardProps) {
   const isLeft = space.alignment === "left";
 
   const ImageCard = () => (
+    <div className="w-full lg:w-[40%]  flex justify-center">
     <div
-      className="w-full h-[385px] lg:h-auto lg:w-[40%] relative bg-cover bg-center overlay-gradient rounded-t-full p-10 overflow-hidden"
+      className="w-full sm:w-[458px] lg:w-full h-[385px] sm:h-[450px] lg:h-auto  relative bg-cover bg-center overlay-gradient rounded-t-full p-10 overflow-hidden"
       style={{ backgroundImage: `url('${space.mainImage}')` }}
     >
       <div className="w-full h-full flex items-end p-10 border border-accent rounded-t-full z-10">
@@ -72,6 +73,7 @@ function WeddingSpaceCard({ space }: WeddingSpaceCardProps) {
           <span className="w-[80px] h-1 bg-accent block"></span>
         </div>
       </div>
+    </div>
     </div>
   );
 
@@ -172,7 +174,7 @@ function WeddingSpaceCard({ space }: WeddingSpaceCardProps) {
 
 export default function Third() {
   return (
-    <div className="flex flex-col gap-12 md:gap-16 2xl:gap-24 fp">
+    <div className="flex flex-col  gap-12 md:gap-16 2xl:gap-24 fpx lg:fpy">
       {weddingSpaces.map((space) => (
         <WeddingSpaceCard key={space.id} space={space} />
       ))}

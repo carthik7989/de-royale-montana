@@ -8,9 +8,9 @@ export default function Second(){
                 <Image src="/images/floral-design.svg" alt="Floral Design" width={181.26} height={54.72} />
                 <h4 className="text-accent font-light text-center">Begin your forever where the hills echo with joy, and every moment feels like a dream.</h4>
                   {/* Divider */}
-          <div className="flex flex-col gap-y-3">
-          <span className="w-[400px] h-px bg-accent block"></span>
-          <span className="w-[400px] h-1 bg-accent block"></span>
+          <div className="w-full flex flex-col items-center gap-y-3">
+          <span className="w-full sm:w-[400px] h-px bg-accent block"></span>
+          <span className="w-full sm:w-[400px] h-1 bg-accent block"></span>
           </div>
           {/* End of Divider */}
             </div>
