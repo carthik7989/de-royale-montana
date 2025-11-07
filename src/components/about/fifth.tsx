@@ -1,10 +1,14 @@
 import Image from "next/image";
+import { QuoteIcon, LeftArrowIcon, RightArrowIcon } from "@/components/icons";
+import { SvgColorProps } from "@/utils/svgColor";
 
-export default function Fifth()
+interface FifthProps extends SvgColorProps {}
+
+export default function Fifth({ svgColor = "primary" }: FifthProps)
 {
     return(
-        <div className="flex justify-between gap-31 p-16 bg-accent font-mona">
-            <Image src="/icons/white-left-arrow.svg" width={64} height={64} alt="Left Arrow" />
+        <div className="flex justify-between items-center gap-31 p-16 bg-accent font-mona">
+            <LeftArrowIcon bgColor="secondary" arrowColor="primary" />
             <div className=" flex gap-9">
                 {/* Card */}
                 <div className="flex flex-col gap-9">
@@ -12,7 +16,7 @@ export default function Fifth()
                     <div className="flex flex-col gap-9 bg-secondary p-9">
                         {/* Inner First Row */}
                     <div className="flex flex-col gap-6">
-                    <Image className="max-w-[80px]" src="/icons/quote.svg" alt="Quote Icon" width={98.5} height={64} />
+                    <QuoteIcon svgColor={svgColor} className="max-w-[80px]" />
                     <div className="text-xl text-text font-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
                     </div>
                     {/* End of Inner First Row */}
@@ -40,7 +44,7 @@ export default function Fifth()
                     <div className="flex flex-col gap-9 bg-secondary p-9">
                         {/* Inner First Row */}
                     <div className="flex flex-col gap-6">
-                    <Image className="max-w-[80px]" src="/icons/quote.svg" alt="Quote Icon" width={98.5} height={64} />
+                    <QuoteIcon svgColor={svgColor} className="max-w-[80px]" />
                     <div className="text-xl text-text font-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
                     </div>
                     {/* End of Inner First Row */}
@@ -65,7 +69,7 @@ export default function Fifth()
                 
                 
             </div>
-            <Image src="/icons/white-right-arrow.svg" alt="Right Arrow" width={64} height={64} />
+            <RightArrowIcon bgColor="secondary" arrowColor="primary" />
         </div>
     );
 }

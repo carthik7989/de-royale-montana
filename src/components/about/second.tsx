@@ -1,13 +1,17 @@
 import Image from "next/image";
+import { QuoteIcon } from "@/components/icons";
+import { SvgColorProps } from "@/utils/svgColor";
 
-export default function Second()
+interface SecondProps extends SvgColorProps {}
+
+export default function Second({ svgColor = "primary" }: SecondProps)
 {
     return(
         <section className="flex flex-col items-center gap-16 p-16 font-mona ">
             {/* Row 1 */}
             <div className="lg:max-w-5xl flex flex-col items-center justify-center gap-4">
                 <div className="text-accent uppercase text-base font-semibold">About us</div>
-                <Image className="self-start ml-20" src="/icons/quote.svg" alt="Quote Icon" width={98.5} height={64} />
+                <QuoteIcon svgColor={svgColor} className="self-start ml-20" />
                 <div className="mt-5  text-accent text-center text-4xl italic font-light">Luxury is not a thing, it&apos;s a feeling — and we make sure you feel it in every moment.</div>
             
             </div>

@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import Carousel from "@/components/ui/Carousel";
+import { FloralIcon, PeopleIcon } from "@/components/icons";
+import { SvgColorProps } from "@/utils/svgColor";
 
 interface WeddingSpace {
   id: number;
@@ -52,11 +54,11 @@ const weddingSpaces: WeddingSpace[] = [
   },
 ];
 
-interface WeddingSpaceCardProps {
+interface WeddingSpaceCardProps extends SvgColorProps {
   space: WeddingSpace;
 }
 
-function WeddingSpaceCard({ space }: WeddingSpaceCardProps) {
+function WeddingSpaceCard({ space, svgColor = "accent" }: WeddingSpaceCardProps) {
   const isLeft = space.alignment === "left";
 
   const ImageCard = () => (
@@ -94,13 +96,7 @@ function WeddingSpaceCard({ space }: WeddingSpaceCardProps) {
               isLeft ? "" : "lg:justify-end"
             }`}
           >
-            <Image
-              src="/icons/people.svg"
-              width={24}
-              height={24}
-              alt="People"
-              className=""
-            />
+            <PeopleIcon svgColor={svgColor} width={24} height={24} />
             <h6 className="text-accent font-mona uppercase font-semibold">
               {space.capacity} People
             </h6>
@@ -114,13 +110,7 @@ function WeddingSpaceCard({ space }: WeddingSpaceCardProps) {
       {/* Inner Row 2 */}
       <div className="flex flex-col items-center gap-10">
         <div className="flex flex-col gap-y-4 items-center">
-          <Image
-            src="/icons/floral-design2.svg"
-            width={145}
-            height={36}
-            alt="floral-design"
-            className="w-[145px]"
-          />
+          <FloralIcon svgColor={svgColor} className="" />
           <h5 className="text-accent font-mona text-center">{space.quote}</h5>
         </div>
 
@@ -172,11 +162,13 @@ function WeddingSpaceCard({ space }: WeddingSpaceCardProps) {
   );
 }
 
-export default function Third() {
+interface ThirdProps extends SvgColorProps {}
+
+export default function Third({ svgColor = "accent" }: ThirdProps) {
   return (
     <div className="flex flex-col  gap-12 md:gap-16 2xl:gap-24 fpx lg:fpy">
       {weddingSpaces.map((space) => (
-        <WeddingSpaceCard key={space.id} space={space} />
+        <WeddingSpaceCard key={space.id} space={space} svgColor={svgColor} />
       ))}
     </div>
   );

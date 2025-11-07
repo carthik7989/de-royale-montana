@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import Carousel from "@/components/ui/Carousel";
+import { FloralIcon2 } from "@/components/icons";
+import { SvgColorProps } from "@/utils/svgColor";
 
 interface Attraction {
   id: number;
@@ -188,18 +190,14 @@ function AttractionCard({ attraction }: AttractionCardProps) {
   );
 }
 
-export default function Third() {
+interface ThirdProps extends SvgColorProps {}
+
+export default function Third({ svgColor = "accent" }: ThirdProps) {
   return (
     <div className="flex flex-col gap-12 fp">
       {/* Row 1 */}
       <div className="flex flex-col items-center gap-6">
-        <Image
-          src="/images/floral-design.svg"
-          width={181.26}
-          height={54.72}
-          alt="floral-design"
-          className="w-[181px]"
-        />
+      <FloralIcon2 svgColor={svgColor} />
         <h3 className=" text-accent font-medium font-beautique leading-tight -tracking-1">
           Top Nearby Attractions
         </h3>

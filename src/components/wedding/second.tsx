@@ -1,11 +1,15 @@
 import Image from "next/image";
+import { FloralIcon2 } from "@/components/icons";
+import { SvgColorProps } from "@/utils/svgColor";
 
-export default function Second(){
+interface SecondProps extends SvgColorProps {}
+
+export default function Second({ svgColor = "accent" }: SecondProps){
     return(
         <div className="flex flex-col items-center gap-9 fp">
             {/* Row 1 */}
             <div className="flex flex-col items-center gap-4 font-mona">
-                <Image src="/images/floral-design.svg" alt="Floral Design" width={181.26} height={54.72} />
+                <FloralIcon2 svgColor={svgColor} />
                 <h4 className="text-accent font-light text-center">Begin your forever where the hills echo with joy, and every moment feels like a dream.</h4>
                   {/* Divider */}
           <div className="w-full flex flex-col items-center gap-y-3">

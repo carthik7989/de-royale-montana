@@ -1,8 +1,12 @@
 import Image from "next/image";
 import Button from "../ui/Button";
 import ScrollZoomImage from "@/components/animations/ScrollZoomImage";
+import { FloralIcon2 } from "@/components/icons";
+import { SvgColorProps } from "@/utils/svgColor";
 
-export default function Eighth() {
+interface EighthProps extends SvgColorProps {}
+
+export default function Eighth({ svgColor = "accent" }: EighthProps) {
   return (
     <div className="flex flex-col w-full gap-y-12 gap-x-27 items-center fp bg-secondary">
       <div className="w-full flex flex-col lg:flex-row gap-8">
@@ -15,7 +19,7 @@ export default function Eighth() {
 
         {/* Column 2 */}
         <div className="w-full lg:w-1/3 3xl:w-[40%] flex flex-col items-center gap-y-6">
-        <Image src="/images/floral-design.svg" width={243.97} height={69.1} alt="floral-design" className="w-[162px] md:w-[181px] 3xl:w-[243.97]" />
+        <FloralIcon2 svgColor={svgColor} />
         <ScrollZoomImage
           zoomScale={1.3}
           className="w-full h-[387px] md:h-[513px] 2xl:h-[650px] 3xl:h-[782px]"

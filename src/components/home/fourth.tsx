@@ -1,6 +1,8 @@
 import Button from '../ui/Button';
 import Image from "next/image";
 import Carousel from "../ui/Carousel";
+import { PeopleIcon } from "@/components/icons";
+import { SvgColorProps } from "@/utils/svgColor";
 
 interface Room {
   title: string;
@@ -31,7 +33,12 @@ const rooms: Room[] = [
   },
 ];
 
-const RoomCard = ({ room, className = "" }: { room: Room; className?: string }) => (
+interface RoomCardProps extends SvgColorProps {
+  room: Room;
+  className?: string;
+}
+
+const RoomCard = ({ room, className = "", svgColor = "secondary" }: RoomCardProps) => (
   <div className={className}>
     <div className="w-full h-[250px] mlg:h-[350px] lg:h-[450px] 2xl:h-[550px] 3xl:h-[720px] bg-cover bg-center relative p-4 mlg:p-6 lg:p-8 2xl:p-10" style={{ backgroundImage: `url(${room.image})` }}>
       {/* Gradient overlay */}
@@ -41,7 +48,7 @@ const RoomCard = ({ room, className = "" }: { room: Room; className?: string }) 
         <div className="flex flex-col items-start justify-end gap-y-6 border border-accent w-full h-full p-4 mlg:p-6 lg:p-8 2xl">
           <h3 className="f-h3 text-secondary font-beautique font-medium z-10 border-l-4 border-accent pl-6">{room.title}</h3>
           <div className="flex justify-start gap-x-6 z-10">
-            <Image src="/icons/people.svg" width={24} height={24} alt="People" />
+            <PeopleIcon svgColor={svgColor} width={24} height={24} />
             <h6 className="f-h6 text-accent font-mona uppercase font-semibold">{room.capacity}</h6>
           </div>
         </div>
@@ -50,7 +57,9 @@ const RoomCard = ({ room, className = "" }: { room: Room; className?: string }) 
   </div>
 );
 
-export default function Fourth() {
+interface FourthProps extends SvgColorProps {}
+
+export default function Fourth({ svgColor = "secondary" }: FourthProps) {
   return (
     <div className='w-full'>
       {/* Desktop View */}
@@ -60,7 +69,7 @@ export default function Fourth() {
         <h2 className="f-h2 font-beautique text-primary  font-light ">Rooms</h2>
         <div className="flex flex-col gap-y-5 md:gap-y-10 xl:gap-y-15">
           {rooms.slice(0, 2).map((room, index) => (
-            <RoomCard key={index} room={room} />
+            <RoomCard key={index} room={room} svgColor={svgColor} />
           ))}
         </div>
      </div>
@@ -69,7 +78,7 @@ export default function Fourth() {
      {/* Right Side */}
      <div className="w-full md:w-1/2 flex flex-col gap-y-5 md:gap-y-10 xl:gap-y-15  ">
         {rooms.slice(2, 4).map((room, index) => (
-          <RoomCard key={index + 2} room={room} />
+          <RoomCard key={index + 2} room={room} svgColor={svgColor} />
         ))}
 
         <div className="flex flex-col gap-y-9 ">
@@ -117,7 +126,7 @@ export default function Fourth() {
         }}
       >
         {rooms.map((room, index) => (
-          <RoomCard key={index} room={room} />
+          <RoomCard key={index} room={room} svgColor={svgColor} />
         ))}
       </Carousel>
     </div>

@@ -2,8 +2,12 @@
 
 import Image from "next/image";
 import InfiniteHorizontalScroll from "@/components/animations/InfiniteHorizontalScroll";
+import { ResortIcon } from "@/components/icons";
+import { SvgColorProps } from "@/utils/svgColor";
 
-export default function Second() {
+interface SecondProps extends SvgColorProps {}
+
+export default function Second({ svgColor = "accent" }: SecondProps) {
   // Card component for reusability
   const Card = ({ 
     title, 
@@ -29,7 +33,7 @@ export default function Second() {
   return (
     <div className="flex flex-col gap-y-9 items-center fp bg-primary">
       <div className="flex flex-col items-center gap-y-4">
-        <Image src="/icons/resort.svg" width={72} height={72} alt="Resort" />
+      <ResortIcon svgColor={svgColor} />
         <h6 className="f-h6 text-secondary uppercase font-mona font-light">Our Resort</h6>
       </div>
       <div className="flex flex-col items-center gap-y-4 text-center">
