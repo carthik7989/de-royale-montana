@@ -29,6 +29,7 @@ interface CarouselProps {
     left?: number;
     right?: number;
   };
+  onSwiperInit?: (swiper: SwiperType) => void;
 }
 
 export default function Carousel({
@@ -50,6 +51,7 @@ export default function Carousel({
     left: 0,
     right: 0,
   },
+  onSwiperInit,
 }: CarouselProps) {
   const childrenArray = Array.isArray(children) ? children : [children];
   const totalSlides = childrenArray.length;
@@ -73,10 +75,11 @@ export default function Carousel({
   const swiperRef = useRef<SwiperType | null>(null);
 
   return (
-    <div className={`relative ${className}`}>
+    <div className={`relative  ${className}`}>
       <Swiper
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
+          onSwiperInit?.(swiper);
         }}
         modules={[Navigation, Pagination, ...(autoplay ? [Autoplay] : [])]}
         spaceBetween={gap}

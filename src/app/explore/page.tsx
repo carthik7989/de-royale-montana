@@ -3,7 +3,8 @@ import Second from "@/components/explore/second";
 import Third from "@/components/explore/third";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Eighth from "@/components/home/eighth";
+
+import CallToAction from "@/components/ui/CallToAction";
 
 export default function Explore()
 {
@@ -14,7 +15,13 @@ export default function Explore()
       <BreadCrumbs title="Nearby Attractions" backgroundImage="/images/fine-dining.png" />
       <Second/>
       <Third/>
-      <Eighth/>
+      <CallToAction
+      title="Book your <br class='hidden lg:block'/>stay with us"
+      subtitle="and enjoy"
+      buttonText="Book your stay"
+      backgroundImage="/images/fine-dining.png"
+      svgColor="accent"
+    />
       </main>
       <Footer />
     </div>

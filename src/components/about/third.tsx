@@ -10,13 +10,13 @@ export default function Third()
                 <div className="flex gap-29">
                     <div className="w-[60%] flex flex-col gap-16 ">
                         <div className="flex flex-col gap-6">
-                        <div className="font-beautique font-medium tracking-wide  text-6xl">Our Vision</div>
+                        <h3 className="font-beautique font-medium tracking-wide ">Our Vision</h3>
                         <div className="h-0.5 w-[200px] bg-accent"></div>
                         </div>
 
-                        <div className="font-mona text-justify text-xl">
+                        <p className="font-mona text-justify ">
                         To be South India&apos;s most cherished luxury escape, seamlessly blending regal comfort with the untamed beauty of the Ghats — where guests rediscover what it means to truly relax, reconnect, and rejuvenate.
-                        </div>
+                        </p>
                     </div>
                     <div className="w-[40%] bg-[url('/images/fine-dining.png')] bg-cover bg-center "></div>
 
@@ -30,13 +30,13 @@ export default function Third()
                 <div className="w-[40%] bg-[url('/images/fine-dining.png')] bg-cover bg-center "></div>
                     <div className="w-[60%] flex flex-col items-end gap-16 ">
                         <div className="flex flex-col items-end gap-6">
-                        <div className="font-beautique font-medium tracking-wide  text-6xl">Our Mission</div>
+                        <h3 className="font-beautique font-medium tracking-wide">Our Mission</h3>
                         <div className="h-0.5 w-[200px] bg-accent"></div>
                         </div>
 
-                        <div className="font-mona text-justify text-xl">
+                        <p className="font-mona text-justify">
                         We strive to go beyond service — we create memories, relationships, and experiences that leave a mark. With personalized attention, bespoke offerings, and an ethos of excellence.
-                        </div>
+                        </p>
                     </div>
                     
 
@@ -55,8 +55,8 @@ export default function Third()
           {/* End of Divider */}
 
           <div className="flex flex-col items-center gap-4">
-          <div className="text-accent uppercase text-base font-semibold">our mission is simple</div>
-          <div className=" text-center text-4xl italic font-light">&quot;To make every guest feel like royalty — naturally.&quot;</div>
+          <h6 className="text-accent uppercase font-semibold">our mission is simple</h6>
+          <h4 className=" text-center italic font-light">&quot;To make every guest feel like royalty — naturally.&quot;</h4>
           
           </div>
           <Image className="w-[910px] h-[558px] object-cover object-center" src="/images/fine-dining.png" alt="" width={910} height={558} />

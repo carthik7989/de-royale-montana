@@ -6,8 +6,8 @@ export default function BreadCrumbs(){
         {/* End of  overlay */}
 
         {/* Content */}
-        <div className="relative flex flex-col items-center justify-center gap-6 text-6xl text-center">
-        <div className=" font-beautique font-medium text-secondary">In the heart of the Western Ghats,</div>
+        <div className="relative flex flex-col items-center justify-center gap-6 text-center">
+        <h2 className=" font-beautique font-medium text-secondary">In the heart of the Western Ghats,</h2>
             <div className="w-full flex items-center justify-center gap-6">
                 {/* Divider */}
         <div className="w-full flex flex-col  gap-3">
@@ -15,7 +15,7 @@ export default function BreadCrumbs(){
             <div className=" h-1 bg-accent"></div>
         </div>
         {/* End of Divider */}
-            <div className=" font-beautique font-medium text-secondary whitespace-nowrap">We didn’t just build a retreat</div>
+            <h2 className=" font-beautique font-medium text-secondary whitespace-nowrap">We didn’t just build a retreat</h2>
              {/* Divider */}
         <div className="w-full flex flex-col  gap-3">
             <div className=" h-0.5 bg-accent"></div>
@@ -23,7 +23,7 @@ export default function BreadCrumbs(){
         </div>
         {/* End of Divider */}
             </div>
-            <div className=" font-beautique font-medium text-secondary">We carved out a sanctuary of timeless elegance.</div>
+            <h2 className=" font-beautique font-medium text-secondary">We carved out a sanctuary of timeless elegance.</h2>
         </div>
         {/* End of Content */}
             

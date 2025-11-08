@@ -9,7 +9,7 @@ import Fourth from '@/components/home/fourth';
 import Fifth from '@/components/home/fifth';
 import Sixth from '@/components/home/sixth';
 import Seventh from '@/components/home/seventh';
-import Eighth from '@/components/home/eighth';
+import CallToAction from '@/components/ui/CallToAction';
 
 
 export default function Home() {
@@ -26,7 +26,13 @@ export default function Home() {
        <Fifth/>
        <Sixth/>
        <Seventh/>
-       <Eighth/>
+       <CallToAction
+      title="Book your <br class='hidden lg:block'/>stay with us"
+      subtitle="and enjoy"
+      buttonText="Book your stay"
+      backgroundImage="/images/fine-dining.png"
+      svgColor="accent"
+    />
       </main>
       <Footer />
      </div>

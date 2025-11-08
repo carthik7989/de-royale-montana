@@ -1,5 +1,17 @@
 import React from 'react';
 
+export type ButtonIconColor =
+  | 'text-red-500'
+  | 'text-blue-500'
+  | 'text-green-500'
+  | 'text-yellow-500'
+  | 'text-purple-500'
+  | 'text-pink-500'
+  | 'text-orange-500'
+  | 'text-secondary'
+  | 'text-primary'
+  | 'text-accent';
+
 interface ButtonProps {
   text: string;
   bgColor?: string;
@@ -8,7 +20,7 @@ interface ButtonProps {
   borderColor?: string;
   showIcon?: boolean;
   iconAlt?: string;
-  iconColor?: 'text-red-500' | 'text-blue-500' | 'text-green-500' | 'text-yellow-500' | 'text-purple-500' | 'text-pink-500' | 'text-orange-500' | 'text-secondary' | 'text-primary' | 'text-accent';
+  iconColor?: ButtonIconColor;
   className?: string;
   onClick?: () => void;
 }
