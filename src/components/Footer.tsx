@@ -7,7 +7,7 @@ export default function Footer() {
       <div>
         <div className="flex flex-col md:flex-row divide-x divide-accent">
           {/* Footer Menu */}
-          <div className="flex w-full md:w-1/2 fp justify-between">
+          <div className="w-full flex flex-col mlg:flex-row  md:w-1/2 fp justify-between">
             {/* Pages */}
             <div className="flex flex-col gap-y-6">
               <div className="border-l-4 border-accent pl-4 nav text-accent uppercase font-mona font-semibold">Pages</div>

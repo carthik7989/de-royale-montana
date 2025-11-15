@@ -66,37 +66,7 @@
   body {
     @apply text-text bg-secondary
   }
-  h1{
-    @apply 3xl:text-[110px] 2xl:text-7xl xl:text-6xl md:text-5xl text-4xl;
-  }
-  h2
-  {
-   @apply text-4xl md:text-5xl 2xl:text-6xl 3xl:text-7xl;
-  }
-  h3
-  {
-    @apply text-2xl md:text-4xl 2xl:text-5xl 3xl:text-6xl;
-  }
-  h4
-  {
-    @apply 3xl:text-4xl 2xl:text-3xl md:text-3xl text-2xl;
-  }
-  h5
-  {
-    @apply 3xl:text-3xl 2xl:text-2xl text-xl;
-  }
-  h6
-  {
-    @apply 2xl:text-2xl text-base;
-  }
-  p
-  {
-    @apply text-base md:text-lg 2xl:text-xl 3xl:text-2xl;
-  }
-  nav
-  {
-    @apply text-sm 2xl:text-base 3xl:text-xl ;
-  }
+  
 }
 
 @layer components{
@@ -115,167 +85,61 @@
 }
 
 
-/* -----------------------------------
- * Fluid Type Scale (Perfect Fourth)
- * Min: 320px | Max: 1920px
- * ----------------------------------- */
 
-/* H1: Main Headlines */
-@utility f-h1 {
-  @apply f-h1-l;
+
+
+/* Step 1 */
+@utility f-4xl {
+  font-size: clamp(3.81rem, 4.6vi + 2.89rem, 8.42rem);
+
 }
 
-@utility f-h1-xl {
-  font-size: clamp(4.2140rem, calc(3.5584rem + 3.2775vw), 7.4915rem);
+/* Step 2 */
+@utility f-xxxl {
+  font-size: clamp(3.05rem, 3.26vi + 2.4rem, 6.31rem);
 }
 
-@utility f-h1-l {
-  font-size: clamp(3.1605rem, calc(2.6689rem + 2.4582vw), 5.6186rem);
+/* Step 3 */
+@utility f-xxl {
+  font-size: clamp(2.44rem, 2.29vi + 1.98rem, 4.74rem);
+
 }
 
-@utility f-h1-m {
-  font-size: clamp(2.3704rem, calc(2.0017rem + 1.8436vw), 4.2140rem);
+/* Step 4 */
+@utility f-xl {
+  font-size: clamp(1.95rem, 1.6vi + 1.63rem, 3.55rem);
+
 }
 
-@utility f-h1-s {
-  font-size: clamp(1.7778rem, calc(1.5013rem + 1.3827vw), 3.1605rem);
+/* Step 5 */
+@utility f-lg {
+  font-size: clamp(1.56rem, 1.1vi + 1.34rem, 2.67rem);
+
 }
 
-/* H2: Secondary Headlines */
-@utility f-h2 {
-  @apply f-h2-l;
+/* Step 6 */
+@utility f-md {
+  font-size: clamp(1.25rem, 0.75vi + 1.1rem, 2rem);
 }
 
-@utility f-h2-xl {
-  font-size: clamp(3.1605rem, calc(2.6689rem + 2.4582vw), 5.6186rem);
+/* Step 7 */
+@utility f-base{
+  font-size: clamp(1rem, 0.5vi + 0.9rem, 1.5rem);
 }
 
-@utility f-h2-l {
-  font-size: clamp(2.3704rem, calc(2.0017rem + 1.8436vw), 4.2140rem);
+/* Step 8 */
+@utility f-sm {
+  font-size:  clamp(0.8rem, 0.33vi + 0.73rem, 1.13rem);
 }
-
-@utility f-h2-m {
-  font-size: clamp(1.7778rem, calc(1.5013rem + 1.3827vw), 3.1605rem);
-}
-
-@utility f-h2-s {
-  font-size: clamp(1.3333rem, calc(1.1259rem + 1.0370vw), 2.3704rem);
-}
-
-/* H3: Sub-sections / Feature Titles */
-@utility f-h3 {
-  @apply f-h3-l;
-}
-
-@utility f-h3-xl {
-  font-size: clamp(2.3704rem, calc(2.0017rem + 1.8436vw), 4.2140rem);
-}
-
-@utility f-h3-l {
-  font-size: clamp(1.7778rem, calc(1.5013rem + 1.3827vw), 3.1605rem);
-}
-
-@utility f-h3-m {
-  font-size: clamp(1.3333rem, calc(1.1259rem + 1.0370vw), 2.3704rem);
-}
-
-@utility f-h3-s {
-  font-size: clamp(1.0000rem, calc(0.8444rem + 0.7778vw), 1.7778rem);
-}
-
-/* H4: Smaller Titles / Card Headings */
-@utility f-h4 {
-  @apply f-h4-l;
-}
-
-@utility f-h4-xl {
-  font-size: clamp(1.7778rem, calc(1.5013rem + 1.3827vw), 3.1605rem);
-}
-
-@utility f-h4-l {
-  font-size: clamp(1.3333rem, calc(1.1259rem + 1.0370vw), 2.3704rem);
-}
-
-@utility f-h4-m {
-  font-size: clamp(1.0000rem, calc(0.8444rem + 0.7778vw), 1.7778rem);
-}
-
-@utility f-h4-s {
-  font-size: clamp(0.7500rem, calc(0.6333rem + 0.5833vw), 1.3333rem);
-}
-
-/* H5: Section/Navigation Headings */
-@utility f-h5 {
-  @apply f-h5-l;
-}
-
-@utility f-h5-xl {
-  font-size: clamp(1.3333rem, calc(1.1259rem + 1.0370vw), 2.3704rem);
-}
-
-@utility f-h5-l {
-  font-size: clamp(1.0000rem, calc(0.8444rem + 0.7778vw), 1.7778rem);
-}
-
-@utility f-h5-m {
-  font-size: clamp(0.7500rem, calc(0.6333rem + 0.5833vw), 1.3333rem);
-}
-
-@utility f-h5-s {
-  font-size: clamp(0.5625rem, calc(0.4750rem + 0.4375vw), 1.0000rem);
-}
-
-/* H6: Smallest Headings / UI Elements */
-@utility f-h6 {
-  @apply f-h6-l;
-}
-
-@utility f-h6-xl {
-  font-size: clamp(1.0000rem, calc(0.8444rem + 0.7778vw), 1.7778rem);
-}
-
-@utility f-h6-l {
-  font-size: clamp(0.7500rem, calc(0.6333rem + 0.5833vw), 1.3333rem);
-}
-
-@utility f-h6-m {
-  font-size: clamp(0.5625rem, calc(0.4750rem + 0.4375vw), 1.0000rem);
-}
-
-@utility f-h6-s {
-  font-size: clamp(0.4219rem, calc(0.3563rem + 0.3281vw), 0.7500rem);
-}
-
-/* P: Body Text - Subtle Scaling */
-@utility f-base {
-  @apply f-base-l;
-}
-
-@utility f-base-xl {
-  font-size: clamp(1.3333rem, calc(1.2444rem + 0.4444vw), 1.7778rem);
-}
-
-@utility f-base-l {
-  font-size: clamp(1rem, calc(0.9333rem + 0.3333vw), 1.3333rem);
-}
-
-@utility f-base-m {
-  font-size: clamp(0.75rem, calc(0.7000rem + 0.2500vw), 1rem);
-}
-
-@utility f-base-s {
-  font-size: clamp(0.5625rem, calc(0.5250rem + 0.1875vw), 0.75rem);
-}
-
-@utility f-base-xs {
-  font-size: clamp(0.4219rem, calc(0.3938rem + 0.1406vw), 0.5625rem);
-}
-
-/* Extra Small (Labels, Disclaimers, Footers) */
+/* Step 9 */
 @utility f-xs {
-  @apply f-base-s;
+  font-size:  clamp(0.64rem, 0.2vi + 0.6rem, 0.84rem);
 }
 
+
+
+
+/* Padding Utilities */
 @utility fpt {
   padding-top: clamp(2.5rem, 2.0736rem + 1.6054vw, 4rem);
 }
@@ -302,7 +166,7 @@
   padding-left: clamp(1.25rem, -0.1003rem + 5.0836vw, 6rem);
   padding-right: clamp(1.25rem, -0.1003rem + 5.0836vw, 6rem);
 }
-@utility fbp{
+@utility fbpy{
   padding-top:clamp(8rem, 6.4rem + 8vw, 16rem);
   padding-bottom: clamp(4rem, 3.2rem + 4vw, 8rem);
 }

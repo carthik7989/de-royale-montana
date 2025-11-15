@@ -41,10 +41,10 @@ export default function CallToAction({
         {/* Column 1 */}
         <div className="w-full lg:w-1/3 3xl:w-[30%] flex flex-col justify-center items-center lg:items-start">
           <h2 
-            className="f-h2 font-medium font-beautique leading-tight -tracking-1"
+            className="f-xl 2xl:f-xxl font-medium font-beautique leading-tight -tracking-1"
             dangerouslySetInnerHTML={{ __html: title }}
           />
-          <p className={`f-base ${subtitleColor} font-light font-mona`}>{subtitle}</p>
+          <p className={`f-sm mlg:f-base lg:f-sm 2xl:f-base ${subtitleColor} font-light font-mona`}>{subtitle}</p>
         </div>
         {/* End of Column 1 */}
 

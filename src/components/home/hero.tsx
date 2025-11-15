@@ -22,7 +22,7 @@ export default function Hero() {
       
       {/* Content */}
       <div className="flex flex-col items-center justify-end relative z-10 text-center text-secondary gap-y-24 lg:gap-y-28 xl:gap-y-32 2xl:gap-y-52 3xl:gap-y-82  w-full ">
-        <h1 className="f-h1 font-bold mb-6 font-beautique tracking-wider">Paradise of Serenity</h1>
+        <h1 className="f-xl md:f-xxl 2xl:f-xxxl font-bold mb-6 font-beautique tracking-wider">Paradise of Serenity</h1>
 
         <div className="flex flex-col items-center gap-y-8 w-full">
         {/* <button className="flex items-center gap-5 bg-primary/70 backdrop-blur-lg rounded-full pr-7">

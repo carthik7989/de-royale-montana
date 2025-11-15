@@ -25,7 +25,7 @@ export default function Second({ svgColor = "accent" }: SecondProps) {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center gap-y-6 text-secondary font-mona font-light">
         <div className="h-0.5 w-[150px] bg-accent"></div>
-        <h6 className="f-h6">{title}</h6>
+        <h6 className="f-sm 2xl:f-base">{title}</h6>
       </div>
     </div>
   );
@@ -34,11 +34,11 @@ export default function Second({ svgColor = "accent" }: SecondProps) {
     <div className="flex flex-col gap-y-9 items-center fp bg-primary">
       <div className="flex flex-col items-center gap-y-4">
       <ResortIcon svgColor={svgColor} />
-        <h6 className="f-h6 text-secondary uppercase font-mona font-light">Our Resort</h6>
+        <h6 className="f-sm 2xl:f-base text-secondary uppercase font-mona font-light">Our Resort</h6>
       </div>
       <div className="flex flex-col items-center gap-y-4 text-center">
-        <h3 className="f-h3 text-secondary font-beautique font-light leading-snug">Escape to a mountain retreat where sacred tranquility meets luxurious indulgence.</h3>
-        <p className="w-full lg:w-11/12 xl:w-4/5 text-accent f-base font-mona font-light leading-normal">Tucked away in the heart of the Western Ghats, De Royale Montana offers a harmonious blend of divine serenity, scenic beauty, and boutique elegance — all crowned with warm, heartfelt hospitality.</p>
+        <h3 className="f-md md:f-lg 2xl:f-xl text-secondary font-beautique font-light leading-snug">Escape to a mountain retreat where sacred tranquility meets luxurious indulgence.</h3>
+        <p className="w-full lg:w-11/12 xl:w-4/5 text-accent f-sm mlg:f-base lg:f-sm 2xl:f-base  font-mona font-light leading-normal">Tucked away in the heart of the Western Ghats, De Royale Montana offers a harmonious blend of divine serenity, scenic beauty, and boutique elegance — all crowned with warm, heartfelt hospitality.</p>
       </div>
       
       {/* Horizontal scrolling container */}

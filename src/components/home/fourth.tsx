@@ -46,10 +46,10 @@ const RoomCard = ({ room, className = "", svgColor = "secondary" }: RoomCardProp
       {/* Content */}
       <div className="border border-accent w-full h-full p-4 mlg:p-6 lg:p-8 2xl">
         <div className="flex flex-col items-start justify-end gap-y-6 border border-accent w-full h-full p-4 mlg:p-6 lg:p-8 2xl">
-          <h3 className="f-h3 text-secondary font-beautique font-medium z-10 border-l-4 border-accent pl-6">{room.title}</h3>
+          <h3 className="f-md mlg:f-lg 2xl:f-xl text-secondary font-beautique font-medium z-10 border-l-4 border-accent pl-6">{room.title}</h3>
           <div className="flex justify-start gap-x-6 z-10">
             <PeopleIcon svgColor={svgColor} width={24} height={24} />
-            <h6 className="f-h6 text-accent font-mona uppercase font-semibold">{room.capacity}</h6>
+            <h6 className="f-sm 2xl:f-base text-accent font-mona uppercase font-semibold">{room.capacity}</h6>
           </div>
         </div>
       </div>
@@ -66,7 +66,7 @@ export default function Fourth({ svgColor = "secondary" }: FourthProps) {
       <div className="hidden md:flex flex-col md:flex-row w-full gap-5 md:gap-10 xl:gap-x-27 xl:gap-y-9 items-center fp bg-secondary">
       {/* Left Side */}
      <div className="w-full md:w-1/2 flex flex-col gap-y-9 md:gap-y-11 xl:gap-y-18 ">
-        <h2 className="f-h2 font-beautique text-primary  font-light ">Rooms</h2>
+        <h2 className="f-lg md:f-xl 2xl:f-xxl font-beautique text-primary  font-light ">Rooms</h2>
         <div className="flex flex-col gap-y-5 md:gap-y-10 xl:gap-y-15">
           {rooms.slice(0, 2).map((room, index) => (
             <RoomCard key={index} room={room} svgColor={svgColor} />
@@ -89,7 +89,7 @@ export default function Fourth({ svgColor = "secondary" }: FourthProps) {
           </div>
           {/* End of Divider */}
 
-          <h5 className="f-h5 font-mona text-primary font-light">A radiant blend of classic opulence and modern refinement.</h5>
+          <h5 className="f-base 2xl:f-md font-mona text-primary font-light">A radiant blend of classic opulence and modern refinement.</h5>
           <Button 
           buttonBgColor="bg-secondary"
            borderColor="border-accent"
@@ -110,7 +110,7 @@ export default function Fourth({ svgColor = "secondary" }: FourthProps) {
     {/* Mobile View */}
     <div className=" md:hidden flex flex-col w-full gap-5 fp bg-secondary">
      
-    <h2 className="f-h2 font-beautique text-primary  font-light ">Rooms</h2>
+    <h2 className="f-xl font-beautique text-primary  font-light ">Rooms</h2>
       
       <Carousel
         gap={20}

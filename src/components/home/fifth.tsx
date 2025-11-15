@@ -22,7 +22,7 @@ export default function Fifth() {
 
       {/* Content */}
       <div className="relative w-full h-full flex items-end justify-start">
-        <h4 className="f-h4 text-secondary leading-relaxed font-mona font-light pl-5 md:pl:8 border-l-8 border-accent absolute bottom-0 left-10 md:left-15 origin-bottom-left transform -rotate-90 whitespace-nowrap">
+        <h4 className="f-md text-secondary leading-relaxed font-mona font-light pl-5 md:pl:8 border-l-8 border-accent absolute bottom-0 left-10 md:left-15 origin-bottom-left transform -rotate-90 whitespace-nowrap">
           {title}
         </h4>
       </div>
@@ -33,8 +33,8 @@ export default function Fifth() {
     <div className="flex flex-col w-full gap-y-16 gap-x-27 items-center fp bg-primary">
       <div className="flex w-full h-full justify-between items-center">
         <div className="flex flex-col gap-y-6">
-          <h4 className="f-h4 font-mona font-light text-accent">What Makes Your Stay</h4>
-          <h3 className="f-h3 font-beautique font-medium text-secondary">Extraordinary</h3>
+          <h4 className="f-md font-mona font-light text-accent">What Makes Your Stay</h4>
+          <h2 className="f-xl  2xl:f-xxl font-beautique font-medium text-secondary">Extraordinary</h2>
         </div>
 
         <Button

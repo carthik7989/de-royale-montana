@@ -104,7 +104,7 @@ function AttractionCard({ attraction }: AttractionCardProps) {
         }`}
       >
         <h4
-          className={`text-text z-10 ${
+          className={`f-base sm:f-md text-text z-10 ${
             isLeft
               ? "border-l-4 border-accent pl-6"
               : "border-l-4 lg:border-l-0 lg:border-r-4 border-accent pl-6 lg:pl-0 lg:pr-6"
@@ -113,7 +113,7 @@ function AttractionCard({ attraction }: AttractionCardProps) {
           {attraction.title}
         </h4>
         <p
-          className={`text-accent text-left ${
+          className={`f-sm mlg:f-base lg:f-sm 2xl:f-base text-accent text-left ${
             isLeft ? "" : "lg:text-right"
           }`}
         >
@@ -198,13 +198,13 @@ export default function Third({ svgColor = "accent" }: ThirdProps) {
       {/* Row 1 */}
       <div className="flex flex-col items-center gap-6">
       <FloralIcon2 svgColor={svgColor} />
-        <h3 className=" text-accent font-medium font-beautique leading-tight -tracking-1">
+        <h3 className="f-md md:f-lg 2xl:f-xl text-accent font-medium font-beautique leading-tight -tracking-1">
           Top Nearby Attractions
         </h3>
         {/* Divider */}
-        <div className="flex flex-col gap-y-3">
-          <span className="w-[400px] h-px bg-accent block"></span>
-          <span className="w-[400px] h-1 bg-accent block"></span>
+        <div className="w-full flex flex-col items-center gap-y-3">
+          <span className="w-full sm:w-[400px] h-px bg-accent block"></span>
+          <span className="w-full sm:w-[400px] h-1 bg-accent block"></span>
         </div>
         {/* End of Divider */}
       </div>

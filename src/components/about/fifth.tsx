@@ -46,13 +46,13 @@ const TestimonialCard = ({ testimonial, svgColor = "primary" }: TestimonialCardP
             {/* Inner First Row */}
             <div className="flex flex-col gap-6">
                 <QuoteIcon svgColor={svgColor} className="max-w-[80px]" />
-                <p className=" text-text font-light">{testimonial.quote}</p>
+                <p className="f-sm mlg:f-base lg:f-sm 2xl:f-base text-text font-light">{testimonial.quote}</p>
             </div>
             {/* End of Inner First Row */}
 
             {/* Inner Second Row */}
             <div className="flex gap-9 items-center">
-                <h6 className="whitespace-nowrap uppercase text-accent ">{testimonial.author}</h6>
+                <h6 className="f-sm mlg:f-base whitespace-nowrap uppercase text-accent ">{testimonial.author}</h6>
                 <div className="h-0.5 bg-accent w-full"></div>
             </div>
             {/* End of Inner Second Row */}
@@ -75,10 +75,10 @@ export default function Fifth({ svgColor = "primary" }: FifthProps)
     const swiperRef = useRef<SwiperType | null>(null);
 
     return(
-        <div className="flex items-center gap-31 p-16 bg-accent font-mona">
+        <div className="flex items-center gap-10 2xl:gap-31 fp bg-accent font-mona">
             <button
                 onClick={() => swiperRef.current?.slidePrev()}
-                className="cursor-pointer flex-shrink-0"
+                className="cursor-pointer flex-shrink-0 hidden lg:flex"
                 aria-label="Previous testimonial"
             >
                 <LeftArrowIcon bgColor="secondary" arrowColor="primary" />
@@ -110,7 +110,7 @@ export default function Fifth({ svgColor = "primary" }: FifthProps)
             </div>
             <button
                 onClick={() => swiperRef.current?.slideNext()}
-                className="cursor-pointer flex-shrink-0"
+                className="cursor-pointer flex-shrink-0 hidden lg:flex"
                 aria-label="Next testimonial"
             >
                 <RightArrowIcon bgColor="secondary" arrowColor="primary" />

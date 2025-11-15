@@ -69,7 +69,7 @@ function WeddingSpaceCard({ space, svgColor = "accent" }: WeddingSpaceCardProps)
     >
       <div className="w-full h-full flex items-end p-10 border border-accent rounded-t-full z-10">
         <div className="w-full flex flex-col items-center gap-y-6 z-10">
-          <h3 className="font-beautique text-center text-secondary">
+          <h3 className="f-md md:f-lg 2xl:f-xl font-beautique text-center text-secondary">
             {space.name}
           </h3>
           <span className="w-[80px] h-1 bg-accent block"></span>
@@ -90,20 +90,20 @@ function WeddingSpaceCard({ space, svgColor = "accent" }: WeddingSpaceCardProps)
               : "items-start lg:items-end border-l-4 lg:border-l-0 lg:border-r-4 border-accent pl-6 lg:pl-0 lg:pr-6"
           }`}
         >
-          <h4 className="text-text z-10">{space.title}</h4>
+          <h4 className="f-base sm:f-md text-text z-10">{space.title}</h4>
           <div
             className={`flex gap-x-6 z-10 justify-start ${
               isLeft ? "" : "lg:justify-end"
             }`}
           >
             <PeopleIcon svgColor={svgColor} width={24} height={24} />
-            <h6 className="text-accent font-mona uppercase font-semibold">
+            <h6 className="f-xs mlg:f-sm  text-accent font-mona uppercase font-semibold">
               {space.capacity} People
             </h6>
           </div>
         </div>
 
-        <p className="text-accent text-justify">{space.description}</p>
+        <p className="f-sm mlg:f-base lg:f-sm 2xl:f-base text-accent text-justify">{space.description}</p>
       </div>
       {/* End of Inner Row 1 */}
 
@@ -111,7 +111,7 @@ function WeddingSpaceCard({ space, svgColor = "accent" }: WeddingSpaceCardProps)
       <div className="flex flex-col items-center gap-10">
         <div className="flex flex-col gap-y-4 items-center">
           <FloralIcon svgColor={svgColor} className="" />
-          <h5 className="text-accent font-mona text-center">{space.quote}</h5>
+          <h5 className="f-sm mlg:f-base 2xl:f-md text-accent font-mona text-center">{space.quote}</h5>
         </div>
 
         {/* Mobile Carousel */}

@@ -13,7 +13,7 @@ export default function BreadCrumbs({
 }: BreadCrumbsProps) {
   return (
     <div
-      className={`relative fbp fpx bg-cover bg-center ${className}`}
+      className={`relative fbpy fpx bg-cover bg-center ${className}`}
       style={{
         backgroundImage: `url('${backgroundImage}')`,
       }}
@@ -26,20 +26,20 @@ export default function BreadCrumbs({
       {/* End of Overlay */}
 
       {/* Content */}
-      <div className="relative flex justify-center gap-6">
+      <div className="relative flex flex-col mlg:flex-row justify-center gap-6">
         {/* Divider */}
-        <div className="flex flex-col justify-center gap-3">
-          <div className="w-25 h-0.5 bg-accent"></div>
-          <div className="w-25 h-1 bg-accent"></div>
+        <div className="w-full sm:w-25  mlg:flex flex-col flex-shrink justify-center gap-1 sm:gap-2 3xl:gap-3 hidden">
+          <div className="h-0.5 bg-accent"></div>
+          <div className="h-1 bg-accent"></div>
         </div>
         {/* End of Divider */}
-        <h2 className=" font-beautique font-medium text-secondary text-center">
+        <h2 className="flex-1 sm:flex-0 f-lg sm:f-xl 2xl:f-xxl font-beautique font-medium text-secondary text-center whitespace-nowrap ">
           {title}
         </h2>
         {/* Divider */}
-        <div className="flex flex-col justify-center gap-3">
-          <div className="w-25 h-0.5 bg-accent"></div>
-          <div className="w-25 h-1 bg-accent"></div>
+        <div className="w-full sm:w-25  mlg:flex flex-col flex-shrink justify-center gap-1 sm:gap-2 3xl:gap-3 hidden">
+          <div className="h-0.5 bg-accent"></div>
+          <div className="h-1 bg-accent"></div>
         </div>
         {/* End of Divider */}
       </div>
