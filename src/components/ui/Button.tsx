@@ -42,7 +42,7 @@ const Button: React.FC<ButtonProps> = ({
       className={`flex items-center  gap-3 xl:gap-4 3xl:gap-6 ${buttonBgColor} border-2 ${borderColor} rounded-full  ${className}`}
       onClick={onClick}
     >
-      <div className={`text-sm xl:text-base 3xl:text-xl  uppercase  ${bgColor} ${textColor} rounded-full px-8 xl:px-10 3xl:px-13 py-4 xl:py-5 3xl:py-7`}>
+      <div className={`f-xs xl:f-sm 3xl:f-base  uppercase  ${bgColor} ${textColor} rounded-full px-8 xl:px-10 3xl:px-13 py-4 xl:py-5 3xl:py-7`}>
         {text}
       </div>
       {showIcon && (

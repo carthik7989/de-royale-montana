@@ -170,10 +170,10 @@
   padding-top:clamp(8rem, 6.4rem + 8vw, 16rem);
   padding-bottom: clamp(4rem, 3.2rem + 4vw, 8rem);
 }
-@utility nav
+/* @utility nav
 {
   @apply text-sm 2xl:text-base 3xl:text-xl
-}
+} */
 
 /* Swiper Custom Styles */
 .swiper-pagination-bullet {

@@ -2,7 +2,7 @@ import { SvgColorProps } from "@/utils/svgColor";
 import FloralIcon from "../icons/FloralIcon";
 
 
-export default function Fifth({ svgColor = "secondary" }: SvgColorProps) {
+export default function Fourth({ svgColor = "secondary" }: SvgColorProps) {
     return (
         <div className="flex flex-col items-center gap-4 bg-accent fp font-mona text-secondary">
             <FloralIcon svgColor={svgColor} />

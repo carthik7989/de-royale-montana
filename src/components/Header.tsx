@@ -17,7 +17,7 @@ export default function Header() {
           {/* End of Hamburger Menu Line */}
 
           {/* Menu text */}
-          <div className='nav'>
+          <div className='f-sm md:f-base'>
             Menu
           </div>
           {/* End of Menu text */}
@@ -33,7 +33,7 @@ export default function Header() {
 
 
         <div className='flex py-3 2xl:py-5 3xl:py-6 gap-16 uppercase'>
-        <nav className='hidden xl:flex items-center gap-16 '>
+        <nav className='hidden xl:flex items-center gap-16 f-sm  '>
         <Link href="/" className="hover:text-accent transition-colors">Home</Link>
             <Link href="/about" className="hover:text-accent transition-colors">About</Link>
             <Link href="/rooms" className="hover:text-accent transition-colors">Rooms</Link>
@@ -41,7 +41,7 @@ export default function Header() {
             <Link href="/Events" className="hover:text-accent transition-colors">Events</Link>
             
         </nav>
-        <button className='bg-secondary/30 text-secondary px-4 md:px-6 py-2 md:py-3 rounded-full nav uppercase'>Contact Us</button>
+        <button className='bg-secondary/30 text-secondary px-4 md:px-6 py-2 md:py-3 rounded-full f-xs xl:f-sm 3xl:f-base uppercase'>Contact Us</button>
         </div>
        
       </div>

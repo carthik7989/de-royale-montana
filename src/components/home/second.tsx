@@ -1,7 +1,6 @@
 "use client";
 
-import Image from "next/image";
-import InfiniteHorizontalScroll from "@/components/animations/InfiniteHorizontalScroll";
+import Carousel from "@/components/ui/Carousel";
 import { ResortIcon } from "@/components/icons";
 import { SvgColorProps } from "@/utils/svgColor";
 
@@ -17,7 +16,7 @@ export default function Second({ svgColor = "accent" }: SecondProps) {
     bgImage?: string;
   }) => (
     <div 
-      className="relative flex flex-col justify-end items-center h-[240px] lg:h-[350px] 3xl:h-[460px] p-6 bg-cover bg-center border-l-4 border-b-4 border-accent flex-shrink-0 w-[200px] lg:w-[357px] 3xl:w-[510px]"
+      className="relative flex flex-col justify-end items-center h-[240px] lg:h-[350px] 3xl:h-[460px] p-6 bg-cover bg-center border-l-4 border-b-4 border-accent flex-shrink-0 w-full"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       {/* Gradient overlay */}
@@ -42,24 +41,35 @@ export default function Second({ svgColor = "accent" }: SecondProps) {
       </div>
       
       {/* Horizontal scrolling container */}
-      <InfiniteHorizontalScroll
-        duration={20}
-        gapClassName="gap-6 md:gap-7 2xl:gap-16"
-        minItems={3}
-      >
-        <Card 
-          title="Fine dining" 
-          bgImage="/images/fine-dining.png" 
-        />
-        <Card 
-          title="Private Cottages" 
-          bgImage="/images/fine-dining.png" 
-        />
-        <Card 
-          title="Scenic Adventures" 
-          bgImage="/images/fine-dining.png" 
-        />
-      </InfiniteHorizontalScroll>
+      <div className="w-full">
+        <Carousel
+          showNavigation={false}
+          showPagination={false}
+          autoplay={true}
+          autoplayDelay={3000}
+          speed={0.8}
+          gap={24}
+          slidesPerView={{
+            mobile: 1,
+            small: 2,
+            tablet: 2,
+            desktop: 3,
+          }}
+        >
+          <Card 
+            title="Fine dining" 
+            bgImage="/images/fine-dining.png" 
+          />
+          <Card 
+            title="Private Cottages" 
+            bgImage="/images/fine-dining.png" 
+          />
+          <Card 
+            title="Scenic Adventures" 
+            bgImage="/images/fine-dining.png" 
+          />
+        </Carousel>
+      </div>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import Button from "../ui/Button";
-import InfiniteHorizontalScroll from "@/components/animations/InfiniteHorizontalScroll";
+import Carousel from "@/components/ui/Carousel";
 
 export default function Fifth() {
   // Card component for temple/place cards
@@ -13,7 +13,7 @@ export default function Fifth() {
     bgImage?: string;
   }) => (
     <div
-      className="relative flex flex-col justify-end items-start h-[380px] md:h-[500px] 3xl:h-[600px] p-5 md:p-9 bg-cover bg-center overflow-hidden flex-shrink-0 w-[250px] md:w-[330px] lg:w-[400px] 3xl:w-[520px]"
+      className="relative flex flex-col justify-end items-start h-[380px] md:h-[500px] 3xl:h-[600px] p-5 md:p-9 bg-cover bg-center overflow-hidden flex-shrink-0 w-full"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       {/* Gradient overlay */}
@@ -50,15 +50,26 @@ export default function Fifth() {
       </div>
 
       {/* Horizontal scrolling container */}
-      <InfiniteHorizontalScroll
-        duration={20}
-        gapClassName="gap-6 md:gap-10"
-        minItems={3}
-      >
-        <Card title="Bachanayaka Temple" bgImage="/images/fine-dining.png" />
-        <Card title="Kukke Subramanya Temple" bgImage="/images/fine-dining.png" />
-        <Card title="Patla Betta" bgImage="/images/fine-dining.png" />
-      </InfiniteHorizontalScroll>
+      <div className="w-full">
+        <Carousel
+          showNavigation={false}
+          showPagination={false}
+          autoplay={true}
+          autoplayDelay={3000}
+          speed={0.8}
+          gap={24}
+          slidesPerView={{
+            mobile: 1,
+            small: 2,
+            tablet: 2,
+            desktop: 3,
+          }}
+        >
+          <Card title="Bachanayaka Temple" bgImage="/images/fine-dining.png" />
+          <Card title="Kukke Subramanya Temple" bgImage="/images/fine-dining.png" />
+          <Card title="Patla Betta" bgImage="/images/fine-dining.png" />
+        </Carousel>
+      </div>
     </div>
   );
 }
