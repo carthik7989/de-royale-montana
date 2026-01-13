@@ -1,54 +1,75 @@
-import Image from "next/image";
+"use client";
+
+import { useRef, useState } from "react";
 import Button from "../ui/Button";
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [progress, setProgress] = useState(0);
+
+  const handleTimeUpdate = () => {
+    if (videoRef.current) {
+      const { currentTime, duration } = videoRef.current;
+      if (duration) {
+        setProgress((currentTime / duration) * 100);
+      }
+    }
+  };
   return (
-    <div className=" relative overflow-hidden flex flex-col items-center fp pt-32 md:pt-46 xl:pt-56 3xl:pt-65">
+    <section className=" relative h-[75vh] sm:h-screen overflow-hidden flex flex-col items-center justify-end fp">
       {/* Background Video */}
       <video
+        ref={videoRef}
         autoPlay
         loop
         muted
         playsInline
+        onTimeUpdate={handleTimeUpdate}
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="/videos/hotel-background.mp4" type="video/mp4" />
-        <source src="/videos/hotel-background.webm" type="video/webm" />
+        <source src="/videos/hotel-background-new-opt.webm" type="video/webm" />
+        <source src="/videos/hotel-background-new-opt.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      
+
       {/* Dark overlay for better text readability */}
       <div className="absolute inset-0 bg-black/40"></div>
-      
+
       {/* Content */}
-      <div className="flex flex-col items-center justify-end relative z-10 text-center text-secondary gap-y-24 lg:gap-y-28 xl:gap-y-32 2xl:gap-y-52 3xl:gap-y-82  w-full ">
-        <h1 className="f-xl md:f-xxl 2xl:f-xxxl font-bold mb-6 font-beautique tracking-wider">Paradise of Serenity</h1>
+      <div className="flex flex-col items-center justify-end relative z-10 text-center text-ivory gap-y-12 sm:gap-y-28 2xl:gap-y-32 3xl:gap-y-52  w-full ">
+        <h1 className="f-xl sm:f-2xl 2xl:f-2xl 3xl:f-3xl font-regular font-beautique tracking-wider">Paradise of Serenity</h1>
 
         <div className="flex flex-col items-center gap-y-8 w-full">
-        {/* <button className="flex items-center gap-5 bg-primary/70 backdrop-blur-lg rounded-full pr-7">
-            <div className="uppercase bg-secondary text-primary rounded-full px-14 py-6">Book Now</div>
-            <Image src="/icons/Arrow.svg" width={16} height={16} alt="Arrow Right" />
-        </button> */}
-        <Button 
-          buttonBgColor="bg-primary/70"
-           borderColor="border-none"
+
+          <Button
+            buttonBgColor="bg-primary/70"
+            borderColor="border-none"
             text="Book Now"
             bgColor="bg-secondary"
-            textColor="text-primary"
+            textColor="text-primary "
             showIcon={true}
-            iconColor="text-secondary"
+            iconClassName="fill-secondary"
             className='backdrop-blur-lg'
-           
+
           />
 
-        <span className="p-3 xl:p-4 3xl:p-5 pb-10 xl:pb-12 3xl:pb-17 rounded-full bg-primary/70 backdrop-blur-lg">
-            <span className="w-1.5 xl:w-2 3xl:w-2.5 h-1.5 xl:h-2 3xl:h-2.5 bg-secondary rounded-full block"></span>
-        </span>
-        <div className="h-0.5 w-full bg-secondary "></div>
-        
+          {/* Scroll Circle */}
+          <span className=" relative p-3.5 xl:p-4 3xl:p-6 pb-10 xl:pb-12 3xl:pb-17 rounded-full bg-primary/70 backdrop-blur-lg">
+            <span className="w-1.5 xl:w-2 3xl:w-2.5 h-1.5 xl:h-2 3xl:h-2.5 bg-secondary rounded-full block scroll-circle"></span>
+          </span>
+          {/* End of Scroll Circle */}
+
+          {/* Progress Bar Container */}
+          <div className="h-0.5 w-full bg-secondary/20 relative overflow-hidden">
+            <div
+              className="h-full bg-linear-to-r from-transparent to-secondary absolute top-0 left-0 transition-[width] duration-300 ease-linear"
+              style={{ width: `${progress}%` }}
+            ></div>
+          </div>
+
         </div>
-        
+
       </div>
-    </div>
+    </section>
   );
 }

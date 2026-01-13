@@ -30,6 +30,7 @@ interface CarouselProps {
     right?: number;
   };
   onSwiperInit?: (swiper: SwiperType) => void;
+  loop?: boolean;
 }
 
 export default function Carousel({
@@ -52,13 +53,14 @@ export default function Carousel({
     right: 0,
   },
   onSwiperInit,
+  loop,
 }: CarouselProps) {
   const childrenArray = Array.isArray(children) ? children : [children];
   const totalSlides = childrenArray.length;
 
   // Build breakpoints for Swiper
   const breakpoints: Record<number, { slidesPerView: number }> = {};
-  
+
   if (slidesPerView.mobile) {
     breakpoints[0] = { slidesPerView: slidesPerView.mobile };
   }
@@ -71,6 +73,14 @@ export default function Carousel({
   if (slidesPerView.desktop) {
     breakpoints[1024] = { slidesPerView: slidesPerView.desktop };
   }
+
+  // Calculate max slides per view to determine if loop should be enabled
+  const maxSlidesPerView = Math.max(
+    ...Object.values(slidesPerView).filter((v) => typeof v === "number")
+  );
+
+  // Only enable loop if we have enough slides
+  const enableLoop = totalSlides > maxSlidesPerView;
 
   const swiperRef = useRef<SwiperType | null>(null);
 
@@ -85,27 +95,27 @@ export default function Carousel({
         spaceBetween={gap}
         slidesPerView={slidesPerView.mobile || 1}
         slidesPerGroup={1}
-        loop={true}
+        loop={loop !== undefined ? loop : enableLoop}
         speed={speed * 1000}
         autoplay={
           autoplay
             ? {
-                delay: autoplayDelay,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: false,
-              }
+              delay: autoplayDelay,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: false,
+            }
             : false
         }
         navigation={false}
         pagination={
           showPagination && totalSlides > (slidesPerView.mobile || 1)
             ? {
-                clickable: true,
-                dynamicBullets: false,
-                renderBullet: (index, className) => {
-                  return `<span class="${className}"></span>`;
-                },
-              }
+              clickable: true,
+              dynamicBullets: false,
+              renderBullet: (index, className) => {
+                return `<span class="${className}"></span>`;
+              },
+            }
             : false
         }
         breakpoints={breakpoints}

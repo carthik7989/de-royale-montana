@@ -1,7 +1,8 @@
-import Button, { type ButtonIconColor } from "./Button";
+
 import ScrollZoomImage from "@/components/animations/ScrollZoomImage";
 import { FloralIcon2 } from "@/components/icons";
 import { SvgColorProps } from "@/utils/svgColor";
+import Button from "./Button";
 
 interface CallToActionProps extends SvgColorProps {
   title: string;
@@ -12,7 +13,7 @@ interface CallToActionProps extends SvgColorProps {
   buttonBgColor?: string;
   buttonBorderColor?: string;
   buttonTextColor?: string;
-  buttonIconColor?: ButtonIconColor;
+  buttonIconColor?: string;
   showIcon?: boolean;
   dividerColor?: string;
   subtitleColor?: string;
@@ -29,33 +30,33 @@ export default function CallToAction({
   buttonBgColor = "bg-accent",
   buttonBorderColor = "border-accent",
   buttonTextColor = "text-secondary",
-  buttonIconColor = "text-accent",
+  buttonIconColor = "fill-accent",
   showIcon = true,
   dividerColor = "bg-accent",
   subtitleColor = "text-accent",
   className = "",
 }: CallToActionProps) {
   return (
-    <div className={`flex flex-col w-full gap-y-12 gap-x-27 items-center fp bg-secondary ${className}`}>
-      <div className="w-full flex flex-col lg:flex-row gap-8">
+    <div className={`flex flex-col w-full gap-12 3xl:gap-20 items-center fp bg-secondary ${className}`}>
+      <div className="w-full grid grid-cols-1 grid-rows-[repeat(3,auto)] lg:grid-cols-3 lg:grid-rows-1 gap-8 lg:gap-4">
         {/* Column 1 */}
-        <div className="w-full lg:w-1/3 3xl:w-[30%] flex flex-col justify-center items-center lg:items-start">
-          <h2 
-            className="f-xl 2xl:f-xxl font-medium font-beautique leading-tight -tracking-1"
+        <div className="w-full  flex flex-col gap-y-4 lg:gap-y-8 justify-center items-center lg:items-start">
+          <h2
+            className="f-lg sm:f-xl 2xl:f-xxl font-regular font-beautique tracking-wider leading-tight -tracking-1"
             dangerouslySetInnerHTML={{ __html: title }}
           />
-          <p className={`f-sm mlg:f-base lg:f-sm 2xl:f-base ${subtitleColor} font-light font-mona`}>{subtitle}</p>
+          <p className={`f-sm mlg:f-base lg:f-sm 2xl:f-base ${subtitleColor} font-medium tracking-widest font-mona uppercase`}>{subtitle}</p>
         </div>
         {/* End of Column 1 */}
 
         {/* Column 2 */}
-        <div className="w-full lg:w-1/3 3xl:w-[40%] flex flex-col items-center gap-y-6">
+        <div className="w-full flex flex-col items-center gap-y-6">
           <FloralIcon2 svgColor={svgColor} />
           <ScrollZoomImage
             zoomScale={zoomScale}
-            className="w-full h-[387px] md:h-[513px] 2xl:h-[650px] 3xl:h-[782px]"
+            className="w-full h-[287px] mlg:h-[387px] md:h-[513px] lg:h-[400px]  2xl:h-[513px] 3xl:h-[782px]"
           >
-            <div 
+            <div
               className="w-full h-full bg-cover bg-center"
               style={{ backgroundImage: `url('${backgroundImage}')` }}
             />
@@ -64,15 +65,15 @@ export default function CallToAction({
         {/* End of Column 2 */}
 
         {/* Column 3 */}
-        <div className="w-full lg:w-1/3 3xl:w-[30%] flex flex-col justify-center">
-          <Button 
+        <div className="w-full  flex flex-col justify-center">
+          <Button
             buttonBgColor="bg-secondary"
             borderColor={buttonBorderColor}
             text={buttonText}
             bgColor={buttonBgColor}
             textColor={buttonTextColor}
             showIcon={showIcon}
-            iconColor={buttonIconColor}
+            iconClassName={buttonIconColor}
             className="self-center lg:self-end"
           />
         </div>

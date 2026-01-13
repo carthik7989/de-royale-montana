@@ -76,23 +76,22 @@ const RoomCard = ({ room, index, svgColor = "accent" }: RoomCardProps) => {
         <h6 className="f-sm 2xl:f-base text-accent font-mona uppercase font-semibold">{room.capacity}</h6>
       </div>
       <p className={`f-sm mlg:f-base lg:f-sm 2xl:f-base ${textColor} font-mona text-justify`}>{room.description}</p>
-      <Button 
+      <Button
         buttonBgColor={buttonBgColor}
         borderColor="border-accent"
         text="Book Now"
         bgColor="bg-accent"
         textColor="text-secondary"
         showIcon={true}
-        iconColor="text-accent"
         className="self-start"
       />
     </div>
   );
 
   const imageSection = (
-    <div 
-      className="w-full lg:w-1/2 h-[300px] lg:h-auto bg-cover bg-center"
-      style={{ backgroundImage: `url(${room.image})` }}
+    <div
+      className="relative w-full lg:w-1/2 h-[350px] md:h-[430px] lg:h-auto overflow-hidden group hover:cursor-pointer"
+      style={{ backgroundImage: `url('${room.image}')` }}
     ></div>
   );
 
@@ -115,7 +114,7 @@ const RoomCard = ({ room, index, svgColor = "accent" }: RoomCardProps) => {
 
 export default function Second() {
   const svgColor = "accent";
-  
+
   return (
     <div className="flex flex-col fpt lg:pt-0">
       {rooms.map((room, index) => (

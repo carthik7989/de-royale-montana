@@ -1,63 +1,44 @@
 "use client";
 
-import { useEffect, ReactNode } from "react";
-import Lenis from "lenis";
+import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
 
-// Register ScrollTrigger plugin
+// Register plugins
 if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 }
 
 interface SmoothScrollProps {
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 export default function SmoothScroll({ children }: SmoothScrollProps) {
-  useEffect(() => {
-    // Initialize Lenis
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing
-      orientation: "vertical",
-      gestureOrientation: "vertical",
-      smoothWheel: true,
-      wheelMultiplier: 1,
-      syncTouch: false,
-      touchMultiplier: 2,
-      infinite: false,
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    // ScrollSmoother.create returns a ScrollSmoother instance
+    const smoother = ScrollSmoother.create({
+      wrapper: wrapperRef.current,
+      content: contentRef.current,
+      smooth: 2.5,
+      smoothTouch: 0.1,
+      normalizeScroll: true,
+      effects: true,
     });
 
-    // Get scroll element (Lenis uses html element by default)
-    const lenisScrollElement = lenis.rootElement || document.documentElement;
-
-    // Connect Lenis scroll to GSAP ScrollTrigger
-    function raf(time: number) {
-      lenis.raf(time);
-      ScrollTrigger.update();
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-
-    // Update ScrollTrigger on scroll
-    lenis.on("scroll", () => {
-      ScrollTrigger.update();
-    });
-
-    // Refresh ScrollTrigger after a short delay to ensure proper initialization
-    const refreshTimer = setTimeout(() => {
-      ScrollTrigger.refresh();
-    }, 100);
-
-    // Cleanup
     return () => {
-      clearTimeout(refreshTimer);
-      lenis.destroy();
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      smoother.kill();
     };
   }, []);
 
-  return <>{children}</>;
+  return (
+    <div id="smooth-wrapper" ref={wrapperRef}>
+      <div id="smooth-content" ref={contentRef}>
+        {children}
+      </div>
+    </div>
+  );
 }
