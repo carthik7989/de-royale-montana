@@ -68,17 +68,16 @@ const TestimonialCard = ({ testimonial, svgColor = "primary" }: TestimonialCardP
     </div>
 );
 
-interface FifthProps extends SvgColorProps {}
+interface TestimonialsProps extends SvgColorProps { }
 
-export default function Fifth({ svgColor = "primary" }: FifthProps)
-{
+export default function Testimonials({ svgColor = "primary" }: TestimonialsProps) {
     const swiperRef = useRef<SwiperType | null>(null);
 
-    return(
+    return (
         <div className="flex items-center gap-10 2xl:gap-31 fp bg-accent font-mona">
             <button
                 onClick={() => swiperRef.current?.slidePrev()}
-                className="cursor-pointer flex-shrink-0 hidden lg:flex"
+                className="cursor-pointer shrink-0 hidden lg:flex"
                 aria-label="Previous testimonial"
             >
                 <LeftArrowIcon bgColor="secondary" arrowColor="primary" />
@@ -100,17 +99,17 @@ export default function Fifth({ svgColor = "primary" }: FifthProps)
                     }}
                 >
                     {testimonials.map((testimonial) => (
-                        <TestimonialCard 
-                            key={testimonial.id} 
-                            testimonial={testimonial} 
-                            svgColor={svgColor} 
+                        <TestimonialCard
+                            key={testimonial.id}
+                            testimonial={testimonial}
+                            svgColor={svgColor}
                         />
                     ))}
                 </Carousel>
             </div>
             <button
                 onClick={() => swiperRef.current?.slideNext()}
-                className="cursor-pointer flex-shrink-0 hidden lg:flex"
+                className="cursor-pointer shrink-0 hidden lg:flex"
                 aria-label="Next testimonial"
             >
                 <RightArrowIcon bgColor="secondary" arrowColor="primary" />

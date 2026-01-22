@@ -1,16 +1,16 @@
 import FloralIcon2 from "@/components/icons/FloralIcon2";
 
-export default function Sixth(){
-    return(
+export default function OurPeople() {
+    return (
         <div className="flex flex-col items-center gap-16 fp ">
             {/* Row 1 */}
             <div className="w-full flex flex-col items-center gap-9">
-            <h3 className="f-md md:f-lg 2xl:f-xl text-accent font-medium font-beautique leading-tight -tracking-1">Our People</h3>
-              {/* Divider */}
-          <div className="w-full flex flex-col items-center gap-y-3">
-          <span className="w-full sm:w-[400px] h-px bg-accent block"></span>
-          <span className="w-full sm:w-[400px] h-1 bg-accent block"></span>
-          </div>   
+                <h3 className="f-md md:f-lg 2xl:f-xl text-accent font-medium font-beautique leading-tight -tracking-1">Our People</h3>
+                {/* Divider */}
+                <div className="w-full flex flex-col items-center gap-y-3">
+                    <span className="w-full sm:w-[400px] h-px bg-accent block"></span>
+                    <span className="w-full sm:w-[400px] h-1 bg-accent block"></span>
+                </div>
             </div>
             {/* End of Row 1 */}
 
@@ -23,7 +23,7 @@ export default function Sixth(){
 
             {/* Row 3 */}
             <div className="flex flex-col items-center gap-9 font-mona">
-                <FloralIcon2  svgColor="accent" />
+                <FloralIcon2 svgColor="accent" />
                 <h4 className="f-base sm:f-md text-center text-text font-light">De Royale Montana is more than a destination. It’s a retreat for those who seek the rare and the real.</h4>
                 <h6 className="f-xs mlg:f-sm  text-accent text-center uppercase font-semibold">Welcome to your sanctuary — where luxury breathes, and nature listens.</h6>
             </div>

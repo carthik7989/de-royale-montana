@@ -1,26 +1,27 @@
-import BreadCrumbs from "@/components/about/breadcrumbs";
-import Fifth from "@/components/about/fifth";
-import Fourth from "@/components/about/fourth";
-import Second from "@/components/about/second";
-import Sixth from "@/components/about/sixth";
-import Third from "@/components/about/third";
+import BreadCrumbs from "@/components/about/BreadCrumbs";
+import AboutUs from "@/components/about/AboutUs";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import OurEssence from "@/components/about/OurEssence";
+import OurPeople from "@/components/about/OurPeople";
+import OurVision from "@/components/about/OurVision";
+import Testimonials from "@/components/about/Testimonials";
 
-export default function Explore()
-{
-    return (
-        <div className="min-h-screen flex flex-col">
+
+
+export default function About() {
+  return (
+    <div className="min-h-screen flex flex-col">
       <Header />
       <main className="">
-      <BreadCrumbs/>
-      <Second/>
-      <Third/>
-      <Fourth/>
-      <Fifth/>
-      <Sixth/>
+        <BreadCrumbs />
+        <AboutUs />
+        <OurVision />
+        <OurEssence />
+        <Testimonials />
+        <OurPeople />
       </main>
       <Footer />
     </div>
-    );
+  );
 }
